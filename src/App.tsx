@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { AddTodoForm } from "./AddTodoForm";
 import { TodoList } from "./TodoList";
+import { Container } from "semantic-ui-react";
 
 const initialTodos: Todo[] = [
   {
@@ -34,10 +35,10 @@ function App() {
     setTodos([...todos, newTodo]);
   }
   return (
-    <>
+    <Container>
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <AddTodoForm addTodo={addTodo} />
-    </>
+    </Container>
   );
 }
 

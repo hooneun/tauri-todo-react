@@ -1,4 +1,5 @@
 import React from "react";
+import { Checkbox, List } from "semantic-ui-react";
 
 interface Props {
   todo: Todo,
@@ -7,11 +8,11 @@ interface Props {
 
 export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
   return (
-    <li>
+    <List.Item>
       <label
         style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
       >
-        <input type="checkbox"
+        <Checkbox toggle type="checkbox"
           checked={todo.complete}
           onClick={() => {
             toggleTodo(todo);
@@ -19,7 +20,7 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
         /> {' '}
         {todo.text}
       </label>
-    </li>
+    </List.Item>
   );
 };
 
